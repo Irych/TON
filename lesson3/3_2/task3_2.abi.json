@@ -1,0 +1,104 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "touch",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "sendValue",
+			"inputs": [
+				{"name":"dest","type":"address"},
+				{"name":"amount","type":"uint128"},
+				{"name":"bounce","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addTask",
+			"inputs": [
+				{"name":"_id","type":"int8"},
+				{"name":"_taskName","type":"string"},
+				{"name":"_isDone","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getCount",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getTaskList",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"string[]"}
+			]
+		},
+		{
+			"name": "getTask",
+			"inputs": [
+				{"name":"id","type":"int8"}
+			],
+			"outputs": [
+				{"name":"value0","type":"string"},
+				{"name":"value1","type":"uint32"},
+				{"name":"value2","type":"bool"}
+			]
+		},
+		{
+			"name": "taskDone",
+			"inputs": [
+				{"name":"id","type":"int8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "removeTask",
+			"inputs": [
+				{"name":"id","type":"int8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "timestamp",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"timestamp","type":"uint32"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"timestamp","type":"uint32"},
+		{"components":[{"name":"taskName","type":"string"},{"name":"time","type":"uint32"},{"name":"isDone","type":"bool"}],"name":"taskListId","type":"map(int8,tuple)"},
+		{"name":"total","type":"string[]"}
+	]
+}

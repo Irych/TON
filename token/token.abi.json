@@ -1,0 +1,66 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "createToken",
+			"inputs": [
+				{"name":"name","type":"string"},
+				{"name":"breed","type":"string"},
+				{"name":"color","type":"string"},
+				{"name":"rare","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "forSale",
+			"inputs": [
+				{"name":"TokenId","type":"uint256"},
+				{"name":"TokenPrice","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getTokenInfo",
+			"inputs": [
+				{"name":"TokenId","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"TokenName","type":"string"},
+				{"name":"TokenBreed","type":"string"},
+				{"name":"TokenColor","type":"string"},
+				{"name":"TokenRare","type":"uint256"},
+				{"name":"TokenPrice","type":"uint256"}
+			]
+		},
+		{
+			"name": "tokensArr",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"name","type":"string"},{"name":"breed","type":"string"},{"name":"color","type":"string"},{"name":"rare","type":"uint256"},{"name":"price","type":"uint256"}],"name":"tokensArr","type":"tuple[]"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"name","type":"string"},{"name":"breed","type":"string"},{"name":"color","type":"string"},{"name":"rare","type":"uint256"},{"name":"price","type":"uint256"}],"name":"tokensArr","type":"tuple[]"},
+		{"name":"TokenToOwner","type":"map(uint256,uint256)"}
+	]
+}

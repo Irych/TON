@@ -1,1 +1,3 @@
 .vscode
+.accumulator/keypair.json
+.accumulator/second_keys.json

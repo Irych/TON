@@ -20,3 +20,5 @@ wallet - задание 4.1
     sendTransactionAndDeleteWallet - Отправить все деньги и уничтожить кошелек
 
 token - задание 4.2
+    createToken - создать токен
+    

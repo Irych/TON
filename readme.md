@@ -15,10 +15,12 @@ task_list - задание 3.2 "Список задачи"
     taskMarsk - отметить задачу как выполненную по ключу
 
 wallet - задание 4.1 
+
     sendTransactionSenderExpense - Отправить без оплаты комиссии за свой счет
     sendTransactionDestExpense - Отправить с оплатой комисси за свой счет
     sendTransactionAndDeleteWallet - Отправить все деньги и уничтожить кошелек
 
 token - задание 4.2
+
     createToken - создать токен
-    
+    forSale - выставить токен на продажу

@@ -1,0 +1,53 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"_powerAttack","type":"uint256"},
+				{"name":"_powerProtection","type":"uint256"},
+				{"name":"_health","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "powerAttack",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"powerAttack","type":"uint256"}
+			]
+		},
+		{
+			"name": "powerProtection",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"powerProtection","type":"uint256"}
+			]
+		},
+		{
+			"name": "health",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"health","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"powerAttack","type":"uint256"},
+		{"name":"powerProtection","type":"uint256"},
+		{"name":"health","type":"uint256"}
+	]
+}

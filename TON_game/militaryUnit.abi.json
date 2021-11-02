@@ -1,0 +1,112 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "attack",
+			"inputs": [
+				{"name":"addressAttacking","type":"address"},
+				{"name":"addressAttacked","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "death",
+			"inputs": [
+				{"name":"addressAttacked","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "tvmPubkey",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"tvmPubkey","type":"uint256"}
+			]
+		},
+		{
+			"name": "msgPubkey",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"msgPubkey","type":"uint256"}
+			]
+		},
+		{
+			"name": "msgAddress",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"msgAddress","type":"address"}
+			]
+		},
+		{
+			"name": "addressAttacking",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"addressAttacking","type":"address"}
+			]
+		},
+		{
+			"name": "addressAttacked",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"addressAttacked","type":"address"}
+			]
+		},
+		{
+			"name": "powerAttack",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"powerAttack","type":"uint256"}
+			]
+		},
+		{
+			"name": "powerProtection",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"powerProtection","type":"uint256"}
+			]
+		},
+		{
+			"name": "health",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"health","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"tvmPubkey","type":"uint256"},
+		{"name":"msgPubkey","type":"uint256"},
+		{"name":"msgAddress","type":"address"},
+		{"name":"addressAttacking","type":"address"},
+		{"name":"addressAttacked","type":"address"},
+		{"name":"powerAttack","type":"uint256"},
+		{"name":"powerProtection","type":"uint256"},
+		{"name":"health","type":"uint256"}
+	]
+}

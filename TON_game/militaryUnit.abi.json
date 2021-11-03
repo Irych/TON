@@ -11,9 +11,28 @@
 			]
 		},
 		{
+			"name": "getValuesAttacking",
+			"inputs": [
+				{"name":"_powerAttacking","type":"int256"},
+				{"name":"_powerProtecting","type":"int256"},
+				{"name":"_healthAttacking","type":"int256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getValuesAttacked",
+			"inputs": [
+				{"name":"_powerAttacked","type":"int256"},
+				{"name":"_powerProtected","type":"int256"},
+				{"name":"_healthAttacked","type":"int256"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "attack",
 			"inputs": [
-				{"name":"addressAttacking","type":"address"},
 				{"name":"addressAttacked","type":"address"}
 			],
 			"outputs": [
@@ -22,7 +41,6 @@
 		{
 			"name": "death",
 			"inputs": [
-				{"name":"addressAttacked","type":"address"}
 			],
 			"outputs": [
 			]
@@ -52,43 +70,51 @@
 			]
 		},
 		{
-			"name": "addressAttacking",
+			"name": "powerAttacked",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"addressAttacking","type":"address"}
+				{"name":"powerAttacked","type":"int256"}
 			]
 		},
 		{
-			"name": "addressAttacked",
+			"name": "powerProtected",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"addressAttacked","type":"address"}
+				{"name":"powerProtected","type":"int256"}
 			]
 		},
 		{
-			"name": "powerAttack",
+			"name": "healthAttacked",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"powerAttack","type":"uint256"}
+				{"name":"healthAttacked","type":"int256"}
 			]
 		},
 		{
-			"name": "powerProtection",
+			"name": "powerAttacking",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"powerProtection","type":"uint256"}
+				{"name":"powerAttacking","type":"int256"}
 			]
 		},
 		{
-			"name": "health",
+			"name": "powerProtecting",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"health","type":"uint256"}
+				{"name":"powerProtecting","type":"int256"}
+			]
+		},
+		{
+			"name": "healthAttacking",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"healthAttacking","type":"int256"}
 			]
 		}
 	],
@@ -103,10 +129,11 @@
 		{"name":"tvmPubkey","type":"uint256"},
 		{"name":"msgPubkey","type":"uint256"},
 		{"name":"msgAddress","type":"address"},
-		{"name":"addressAttacking","type":"address"},
-		{"name":"addressAttacked","type":"address"},
-		{"name":"powerAttack","type":"uint256"},
-		{"name":"powerProtection","type":"uint256"},
-		{"name":"health","type":"uint256"}
+		{"name":"powerAttacked","type":"int256"},
+		{"name":"powerProtected","type":"int256"},
+		{"name":"healthAttacked","type":"int256"},
+		{"name":"powerAttacking","type":"int256"},
+		{"name":"powerProtecting","type":"int256"},
+		{"name":"healthAttacking","type":"int256"}
 	]
 }

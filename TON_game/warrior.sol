@@ -6,17 +6,31 @@
 pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
 
+import "gameObject.sol";
+
 // This is class that describes you smart contract.
 contract warrior {
 
-    uint public powerAttack;
-    uint public powerProtection;
+    int public powerAttack;
+    int public powerProtection;
+    int public health;
 
-    constructor(uint _powerAttack, uint _powerProtection) public {
+    constructor(int _powerAttack, int _powerProtection, int _health) public {
         tvm.accept();
         powerAttack = _powerAttack;
         powerProtection = _powerProtection;
+        health = _health;
 
+    }
+
+    function sendValuesAttacking(gameObject militaryUnitAddress) public {
+        tvm.accept();
+        militaryUnitAddress.getValuesAttacking(powerAttack, powerProtection, health);
+    }
+
+    function sendValuesAttacked(gameObject militaryUnitAddress) public {
+        tvm.accept();
+        militaryUnitAddress.getValuesAttacked(powerAttack, powerProtection, health);
     }
 
 }

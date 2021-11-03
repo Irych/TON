@@ -5,21 +5,25 @@
  */
 pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
+import "gameObject.sol";
 
 // This is class that describes you smart contract.
-contract militaryUnit {
+contract militaryUnit is gameObject{
 
     uint public tvmPubkey;
     uint public  msgPubkey;
 
-    address public msgAddress;
-    address public addressAttacking;
-    address public addressAttacked;
+    address public msgAddress;  // income address
 
-    uint public powerAttack;
-    uint public powerProtection;
+    int public powerAttacked;
+    int public powerProtected;
 
-    uint public health;
+    int public healthAttacked;
+
+    int public powerAttacking;
+    int public powerProtecting;
+
+    int public healthAttacking;
     
     constructor() public {
         // Check that contract's public key is set
@@ -35,25 +39,41 @@ contract militaryUnit {
 
     }
 
-
-    function attack(address addressAttacking, address addressAttacked) public {
+    function getValuesAttacking(int _powerAttacking, int _powerProtecting, int _healthAttacking) public override{
         tvm.accept();
-
         tvmPubkey = tvm.pubkey();
         msgPubkey = msg.pubkey();
 
         msgAddress = msg.sender;
-        addressAttacked = addressAttacked;
-        addressAttacking = addressAttacking;
-        health = addressAttacked.health - (addressAttacking.powerAttack - addressAttacked.powerProtection);
+        powerAttacking = _powerAttacking;
+        powerProtecting = _powerProtecting;
+        healthAttacking = _healthAttacking;
+    }
 
-        if (health <= 0) {
+    function getValuesAttacked(int _powerAttacked, int _powerProtected, int _healthAttacked) public override{
+        tvm.accept();
+        tvmPubkey = tvm.pubkey();
+        msgPubkey = msg.pubkey();
+
+        msgAddress = msg.sender;
+        powerAttacked = _powerAttacked;
+        powerProtected = _powerProtected;
+        healthAttacked = _healthAttacked;
+    }
+
+
+    function attack(address addressAttacked) public override{
+        tvm.accept();
+
+        healthAttacked = healthAttacked - (powerAttacking - powerProtected);
+
+        if (healthAttacked <= 0) {
             death();
         }
     }
 
-    function death(address addressAttacked) public {
+    function death() public {
         tvm.accept();
-        addressAttacked.transfer(0, true, 160);
+        msg.sender.transfer(0, false, 160);
     }
 } 
